@@ -59,7 +59,7 @@ quiz1/
 
 ## Menjalankan Secara Lokal
 
-Tautan memakai path absolut (`/quiz1/...`), jadi website perlu dijalankan lewat server lokal dari **folder induk** `quiz1`, bukan dengan membuka file langsung.
+Tautan memakai path absolut (`/quiz1/...`), jadi website perlu dijalankan lewat server lokal dari folder induk `quiz1`, bukan dengan membuka file secara langsung.
 
 1. Clone repo ini.
 2. Buka folder hasil clone di VS Code.
@@ -68,8 +68,8 @@ Tautan memakai path absolut (`/quiz1/...`), jadi website perlu dijalankan lewat 
 
 ## Deployment
 
-Website di-*deploy* sebagai static site ke [ISI NAMA HOSTING, mis. Netlify] langsung dari repo ini. Folder `quiz1` berada di root repo agar alamatnya sesuai ketentuan, yaitu `{domain}/quiz1`.
+Website di-deploy sebagai static site menggunakan GitHub Pages langsung dari repositori ini agar alamatnya sesuai ketentuan, yaitu `{domain}/quiz1`.
 
 ## Penulis
 
-**[Nama Lengkap]** · [NIM] · Teknik Informatika
+Kyla Rahma Maulida · 5025251132 · Teknik Informatika
