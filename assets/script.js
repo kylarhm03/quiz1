@@ -1,69 +1,44 @@
-document.querySelectorAll('.carousel').forEach(c => {
+const box = document.createElement('div');
+box.className = 'lightbox';
+box.innerHTML = '<img alt=""><button aria-label="Tutup">×</button>';
+document.body.append(box);
 
-    const t = c.querySelector('.track');
-    const s = [...t.children];
-    const d = c.querySelector('.dots');
+const big = box.querySelector('img');
+const closeBox = () => box.classList.remove('open');
 
-    const beh = matchMedia('(prefers-reduced-motion: reduce)').matches
-        ? 'auto'
-        : 'smooth';
-
-    s.forEach((el, i) => {
-
-        const b = document.createElement('button');
-
-        b.className = 'dot';
-        b.setAttribute('aria-label', 'Foto ' + (i + 1));
-
-        b.onclick = () => t.scrollTo({
-            left: el.offsetLeft - (t.clientWidth - el.offsetWidth) / 2,
-            behavior: beh
-        });
-
-        d.append(b);
+document.querySelectorAll('.pic, .shot, .photo img').forEach(img => {
+    img.tabIndex = 0;
+    img.addEventListener('click', () => {
+        big.src = img.src;
+        big.alt = img.alt;
+        box.classList.add('open');
     });
+    img.addEventListener('keydown', e => {
+        if (e.key === 'Enter') img.click();
+    });
+});
 
-    const dots = [...d.children];
+box.addEventListener('click', e => {
+    if (e.target !== big) closeBox();
+});
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeBox();
+});
 
-    const update = () => {
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        let m = 0;
-        let best = Infinity;
-
-        s.forEach((el, i) => {
-
-            const x = Math.abs(
-                el.offsetLeft +
-                el.offsetWidth / 2 -
-                t.scrollLeft -
-                t.clientWidth / 2
-            );
-
-            if (x < best) {
-                best = x;
-                m = i;
+if (!reduceMotion && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in');
+                io.unobserve(entry.target);
             }
         });
+    }, { threshold: 0.15 });
 
-        dots.forEach((x, i) => {
-            x.classList.toggle('on', i === m);
-        });
-    };
-
-    t.addEventListener('scroll', update, {
-        passive: true
+    document.querySelectorAll('.polaroid, .card, .place, .tile, .pic').forEach(el => {
+        el.classList.add('reveal');
+        io.observe(el);
     });
-
-    update();
-
-    c.querySelector('.prev').onclick = () => t.scrollBy({
-        left: -t.clientWidth * 0.7,
-        behavior: beh
-    });
-
-    c.querySelector('.next').onclick = () => t.scrollBy({
-        left: t.clientWidth * 0.7,
-        behavior: beh
-    });
-
-});
+}
