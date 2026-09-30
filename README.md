@@ -4,7 +4,7 @@ Personal website statis bertema **scrapbook imut** yang memperkenalkan saya dan 
 
 🔗 **Live website:**  https://kylarhm03.github.io/quiz1/
 
-📁 **Source code:** (https://github.com/username/nama-repo)
+📁 **Source code:** https://github.com/kylarhm03/quiz1.git
 
 ---
 
