@@ -404,3 +404,17 @@ footer {
         transition: none !important;
     }
 }
+
+/* ===== Revisi ===== */
+.bar { justify-content: center; padding: 8px 14px; }
+
+/* Profile: 4 foto (bulat, kotak, kotak, bulat) */
+.pics { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 22px; margin: 40px 0 10px; }
+.pic { aspect-ratio: 1; object-fit: cover; border: 6px solid #fff; box-shadow: 0 6px 0 var(--blush); }
+.pic.round { width: clamp(90px, 20vw, 190px); border-radius: 50%; }
+.pic.square { width: clamp(110px, 24vw, 230px); border-radius: 22px; }
+
+/* Tourist: 2 foto per tempat */
+.duo { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 16px; }
+.shot { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border: 6px solid #fff; border-radius: 18px; box-shadow: 0 6px 0 var(--blush); }
+@media (max-width: 560px) { .duo { grid-template-columns: 1fr; } }

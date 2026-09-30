@@ -5,11 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Profile · Surabaya Diary</title>
+    <title>Profile</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link
         href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Fredoka:wght@500;600&family=Quicksand:wght@500;700&display=swap"
         rel="stylesheet"
@@ -21,8 +20,6 @@
 <body>
 
     <header class="bar">
-        <a class="logo" href="/quiz1/">Surabaya Diary</a>
-
         <nav>
             <a href="/quiz1/">Home</a>
             <a href="/quiz1/profile/" class="on" aria-current="page">Profile</a>
@@ -34,77 +31,11 @@
 
     <main class="wrap">
 
-        <h1>Kenalan dulu ya</h1>
-        <p class="hand">geser fotonya yuk →</p>
-
-        <div class="carousel">
-
-            <div class="track" tabindex="0">
-
-                <div class="slide">
-                    <figure class="polaroid" style="--r:-2deg">
-                        <div class="photo" data-e="🌸">
-                            <img
-                                src="/quiz1/img/aku.jpeg"
-                                alt="Foto profil 1"
-                                loading="lazy"
-                                onerror="this.remove()"
-                            >
-                        </div>
-                        <figcaption>THIS IS MEEE!</figcaption>
-                    </figure>
-                </div>
-
-                <div class="slide">
-                    <figure class="polaroid" style="--r:2deg">
-                        <div class="photo" data-e="🍰">
-                            <img
-                                src="/quiz1/img/sahabatku.jpeg"
-                                alt="Foto profil 2"
-                                loading="lazy"
-                                onerror="this.remove()"
-                            >
-                        </div>
-                        <figcaption>My Hoomies</figcaption>
-                    </figure>
-                </div>
-
-                <div class="slide">
-                    <figure class="polaroid" style="--r:-1deg">
-                        <div class="photo" data-e="📚">
-                            <img
-                                src="/quiz1/img/fav_moment.jpeg"
-                                alt="Foto profil 3"
-                                loading="lazy"
-                                style="object-position: center 90%"
-                                onerror="this.remove()"
-                            >
-                        </div>
-                        <figcaption>My favorite Moment 1</figcaption>
-                    </figure>
-                </div>
-
-                <div class="slide">
-                    <figure class="polaroid" style="--r:2deg">
-                        <div class="photo" data-e="🎨">
-                            <img
-                                src="/quiz1/img/favmoment.jpeg"
-                                alt="Foto profil 4"
-                                loading="lazy"
-                                onerror="this.remove()"
-                            >
-                        </div>
-                        <figcaption>My Favorite Moment 2</figcaption>
-                    </figure>
-                </div>
-
-            </div>
-
-            <button class="car-btn prev" aria-label="Foto sebelumnya">‹</button>
-            <button class="car-btn next" aria-label="Foto berikutnya">›</button>
-
-            <div class="dots"></div>
-
+        <div class="pics">
+            <img class="pic round" src="/quiz1/img/aku.jpeg" alt="Kyla">
+            <img class="pic square" src="/quiz1/img/sahabatku.jpeg" alt="Kyla dan sahabat-sahabatnya">
+            <img class="pic square" src="/quiz1/img/fav_moment.jpeg" alt="Momen favorit 1" style="object-position: center 90%">
+            <img class="pic round" src="/quiz1/img/favmoment.jpeg" alt="Momen favorit 2">
         </div>
 
         <section class="card">
@@ -126,12 +57,6 @@
         </section>
 
     </main>
-
-    <footer>
-        Me and My Memories · Quiz 1
-    </footer>
-
-    <script src="/quiz1/assets/script.js"></script>
 
 </body>
 
